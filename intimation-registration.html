@@ -233,6 +233,14 @@
   .page-btn:hover { border-color: #00ADBB; color: #00ADBB; }
   .page-btn.active { background: #00ADBB; color: white; border-color: #00ADBB; }
 
+   /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,173,187,0.3); border-radius: 4px; }
+
+  /* Checkbox */
+  input[type=checkbox] { accent-color: #00ADBB; width: 14px; height: 14px; cursor: pointer; }
+
 
 
 
@@ -472,10 +480,9 @@
                     </div>
                 </div>
 
-                <!-- Table Component -->
+                 <!-- Table Component -->
 
-                <div
-                    style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                <div style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
                     <div
                         style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1.5px solid #f1f5f9;">
                         <span style="font-size:16px; font-weight:700; color:#0f172a;">Claim Intimation Details</span>
@@ -602,11 +609,191 @@
                         </div>
                     </div>
                 </div>
+        
+        <!-- ══ REGISTRATION PANEL ══ -->
+      <div id="panel-registration" style="display:none;">
+        <h1 style="font-size:22px; font-weight:700; color:#0f172a; margin:0 0 4px;">Registration</h1>
+        <p style="font-size:13.5px; color:#64748b; margin:0 0 22px;">Efficiently process and register pending claim intimations</p>
+
+        <!-- Search bar -->
+        <div style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; padding:18px 20px; margin-bottom:20px; display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+          <div style="flex:1; min-width:160px;">
+            <label style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Date Range</label>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
+                <span style="flex:1; color:#94a3b8; font-size:12.5px;">From Date</span>
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <span style="color:#94a3b8; font-size:12px;">to</span>
+              <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
+                <span style="flex:1; color:#94a3b8; font-size:12.5px;">To Date</span>
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1; min-width:160px;">
+            <label style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Reference / Policy / Claim Number</label>
+            <input class="search-input" placeholder="Enter Reference/Policy/Claim Number" style="width:100%;" />
+          </div>
+          <div style="flex:1; min-width:160px;">
+            <label style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Contact (Claim-Intimated)</label>
+            <input class="search-input" placeholder="Enter Contact Number" style="width:100%;" />
+          </div>
+          <div style="display:flex; gap:8px; flex-shrink:0;">
+            <button class="btn-search">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Search
+            </button>
+            <button class="btn-reset">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              Reset
+            </button>
+          </div>
         </div>
 
-    </div>
+        <!-- Table Component -->
+
+                <div style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                    <div
+                        style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1.5px solid #f1f5f9;">
+                        <span style="font-size:16px; font-weight:700; color:#0f172a;">Claim Intimation Details</span>
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <button class="btn-export">
+                                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Export
+                            </button>
+                            <span class="badge-records">14 records found</span>
+                        </div>
+                    </div>
+
+                    <div style="overflow-x:auto;">
+                        <table class="claims-table"
+                            style="width:100%; border-collapse:collapse; min-width:900px; text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th style="width:36px; text-align:center;"><input type="checkbox" /></th>
+                                    <th>Insured Name</th>
+                                    <th>Contact Details</th>
+                                    <th>Date Of Loss</th>
+                                    <th>Reference Date</th>
+                                    <th>Agent Name</th>
+                                    <th>Agent Contact Details</th>
+                                    <th>Reference Number</th>
+                                    <th>Policy Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">Chamal Achintha</td>
+                                    <td>
+                                        <div style="font-size:13px; color:#334155;">077 123 1234</div>
+                                        <div style="font-size:11.5px; color:#00ADBB;">chamal@gmail.com</div>
+                                    </td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Chamal Achintha</td>
+                                    <td style="font-size:12.5px; color:#64748b;">077 123 1234</td>
+                                    <td><span class="ref-badge">REF-2024-7891</span></td>
+                                    <td><span class="policy-badge">POL-2024-001234</span></td>
+                                </tr>
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">Chamal Achintha</td>
+                                    <td>
+                                        <div style="font-size:13px; color:#334155;">077 123 1234</div>
+                                        <div style="font-size:11.5px; color:#00ADBB;">chamal@gmail.com</div>
+                                    </td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Chamal Achintha</td>
+                                    <td style="font-size:12.5px; color:#64748b;">077 123 1234</td>
+                                    <td><span class="ref-badge">REF-2024-7891</span></td>
+                                    <td><span class="policy-badge">POL-2024-001234</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">Chamal Achintha</td>
+                                    <td>
+                                        <div style="font-size:13px; color:#334155;">077 123 1234</div>
+                                        <div style="font-size:11.5px; color:#00ADBB;">chamal@gmail.com</div>
+                                    </td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Chamal Achintha</td>
+                                    <td style="font-size:12.5px; color:#64748b;">077 123 1234</td>
+                                    <td><span class="ref-badge">REF-2024-7891</span></td>
+                                    <td><span class="policy-badge">POL-2024-001234</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">Chamal Achintha</td>
+                                    <td>
+                                        <div style="font-size:13px; color:#334155;">077 123 1234</div>
+                                        <div style="font-size:11.5px; color:#00ADBB;">chamal@gmail.com</div>
+                                    </td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Chamal Achintha</td>
+                                    <td style="font-size:12.5px; color:#64748b;">077 123 1234</td>
+                                    <td><span class="ref-badge">REF-2024-7891</span></td>
+                                    <td><span class="policy-badge">POL-2024-001234</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">Chamal Achintha</td>
+                                    <td>
+                                        <div style="font-size:13px; color:#334155;">077 123 1234</div>
+                                        <div style="font-size:11.5px; color:#00ADBB;">chamal@gmail.com</div>
+                                    </td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Chamal Achintha</td>
+                                    <td style="font-size:12.5px; color:#64748b;">077 123 1234</td>
+                                    <td><span class="ref-badge">REF-2024-7891</span></td>
+                                    <td><span class="policy-badge">POL-2024-001234</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Pagination -->
+                    <div
+                        style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
+                        <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
+                        <div style="display:flex; gap:4px; align-items:center;">
+                            <button class="page-btn">&#8249;</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
+                            <button class="page-btn">5</button>
+                            <button class="page-btn">&#8250;</button>
+                        </div>
+                    </div>
+                </div>
+
+
+      </div>
+
+    </main>
+  </div>
+
+<script>
+  function showTab(tab) {
+    document.getElementById('panel-intimation').style.display = tab === 'intimation' ? '' : 'none';
+    document.getElementById('panel-registration').style.display = tab === 'registration' ? '' : 'none';
+    document.getElementById('tab-intimation').className = 'tab-btn' + (tab === 'intimation' ? ' active' : '');
+    document.getElementById('tab-registration').className = 'tab-btn' + (tab === 'registration' ? ' active' : '');
+  }
+</script>
 </body>
-
-
-
 </html>
