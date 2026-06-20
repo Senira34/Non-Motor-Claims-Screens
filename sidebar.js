@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById("sidebar-container");
+    if (!container) return;
+
+    // Direct HTML injection to bypass CORS issues on local file:// access
+    const sidebarHTML = `
 <aside class="glass-sidebar" style="width:220px; min-width:250px; display:flex; flex-direction:column; overflow-y:auto; height: 100vh;">
     <!-- Logo -->
     <div class="logo-area" style="padding:18px 16px; display:flex; align-items:center; gap:10px;">
@@ -77,3 +83,21 @@
         </a>
     </nav>
 </aside>
+    `;
+
+    container.innerHTML = sidebarHTML;
+    
+    // Highlight active link based on current URL
+    const currentPath = window.location.pathname.split('/').pop();
+    const navItems = container.querySelectorAll('.nav-item');
+    
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === currentPath) {
+            item.classList.add('active');
+        } else if (currentPath === '' && item.getAttribute('href') === 'intimation-registration.html') {
+            // default route if opened via directory
+            item.classList.add('active');
+        }
+    });
+});
