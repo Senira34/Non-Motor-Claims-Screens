@@ -406,26 +406,21 @@
                 <!-- ══ INTIMATION PANEL ══ -->
                 <div id="panel-received">
                     <h1 style="font-size:22px; font-weight:700; color:#0f172a; margin:0 0 4px;">File Assignment</h1>
-                    
 
-                <!-- Tabs -->
-                <div style="display:flex; gap:8px; margin-bottom:24px;">
-                    <button class="tab-btn active" id="tab-intimation"
-                        onclick="showTab('received')">Received Files</button>
-                    <button class="tab-btn" id="tab-registration"
-                        onclick="showTab('assign')">Assign to me</button>
-                        <button class="tab-btn active" id="tab-intimation"
-                        onclick="showTab('intimation')">Task Handling </button>
-                        <button class="tab-btn active" id="tab-intimation"
-                        onclick="showTab('intimation')">Manual Task Accept </button>
-                        <button class="tab-btn active" id="tab-intimation"
-                        onclick="showTab('intimation')">Final Close </button>
-                        <button class="tab-btn active" id="tab-intimation"
-                        onclick="showTab('intimation')">File Reopening </button>
-                </div>
 
-                
-                    
+                    <!-- Tabs -->
+                    <div style="display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap;">
+                        <button class="tab-btn active" id="tab-received" onclick="showTab('received')">Received
+                            Files</button>
+                        <button class="tab-btn" id="tab-assign" onclick="showTab('assign')">Assigned to me</button>
+                        <button class="tab-btn" id="tab-task" onclick="showTab('task')">Task Handling</button>
+                        <button class="tab-btn" id="tab-manual" onclick="showTab('manual')">Manual Task Accept</button>
+                        <button class="tab-btn" id="tab-final" onclick="showTab('final')">Final Close</button>
+                        <button class="tab-btn" id="tab-reopen" onclick="showTab('reopen')">File Reopening</button>
+                    </div>
+
+
+
 
                     <!-- Table card -->
                     <div
@@ -460,61 +455,66 @@
                                 <tbody>
                                     <tr>
                                         <!-- Search bar -->
-                    <div
-                        style="background:white; padding:18px 20px; margin-bottom:20px; display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
-                        <div style="flex:1; min-width:160px;">
-                            <label
-                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Date
-                                Range</label>
-                            <div style="display:flex; align-items:center; gap:6px;">
-                                <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
-                                    <span style="flex:1; color:#94a3b8; font-size:12.5px;">From Date</span>
-                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
-                                        stroke-width="2">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                        <line x1="16" y1="2" x2="16" y2="6" />
-                                        <line x1="8" y1="2" x2="8" y2="6" />
-                                        <line x1="3" y1="10" x2="21" y2="10" />
-                                    </svg>
-                                </div>
-                                <span style="color:#94a3b8; font-size:12px;">to</span>
-                                <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
-                                    <span style="flex:1; color:#94a3b8; font-size:12.5px;">To Date</span>
-                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
-                                        stroke-width="2">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                        <line x1="16" y1="2" x2="16" y2="6" />
-                                        <line x1="8" y1="2" x2="8" y2="6" />
-                                        <line x1="3" y1="10" x2="21" y2="10" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="flex:1; min-width:160px;">
-                            <label
-                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Reference
-                                / Policy Number</label>
-                            <input class="search-input" placeholder="Enter Reference / Policy Number"
-                                style="width:100%;" />
-                        </div>
-                        <div style="flex:1; min-width:160px;">
-                            <label
-                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Contact
-                                Number (Claim-Intimated)</label>
-                            <input class="search-input" placeholder="Enter Contact Number" style="width:100%;" />
-                        </div>
-                        <div style="display:flex; gap:8px; flex-shrink:0;">
-                            <button class="btn-search">
-                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <circle cx="11" cy="11" r="8" />
-                                    <path d="m21 21-4.35-4.35" />
-                                </svg>
-                                Search
-                            </button>
-                            
-                        </div>
-                    </div>
+                                        <div
+                                            style="background:white; padding:18px 20px; margin-bottom:20px; display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                                            <div style="flex:1; min-width:160px;">
+                                                <label
+                                                    style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Date
+                                                    Range</label>
+                                                <div style="display:flex; align-items:center; gap:6px;">
+                                                    <div class="date-input"
+                                                        style="flex:1; min-width:0; cursor:pointer;">
+                                                        <span style="flex:1; color:#94a3b8; font-size:12.5px;">From
+                                                            Date</span>
+                                                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                            stroke="#94a3b8" stroke-width="2">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                                        </svg>
+                                                    </div>
+                                                    <span style="color:#94a3b8; font-size:12px;">to</span>
+                                                    <div class="date-input"
+                                                        style="flex:1; min-width:0; cursor:pointer;">
+                                                        <span style="flex:1; color:#94a3b8; font-size:12.5px;">To
+                                                            Date</span>
+                                                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                            stroke="#94a3b8" stroke-width="2">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="flex:1; min-width:160px;">
+                                                <label
+                                                    style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Reference
+                                                    / Policy Number</label>
+                                                <input class="search-input"
+                                                    placeholder="Enter Reference / Policy Number" style="width:100%;" />
+                                            </div>
+                                            <div style="flex:1; min-width:160px;">
+                                                <label
+                                                    style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Contact
+                                                    Number (Claim-Intimated)</label>
+                                                <input class="search-input" placeholder="Enter Contact Number"
+                                                    style="width:100%;" />
+                                            </div>
+                                            <div style="display:flex; gap:8px; flex-shrink:0;">
+                                                <button class="btn-search">
+                                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="2.5">
+                                                        <circle cx="11" cy="11" r="8" />
+                                                        <path d="m21 21-4.35-4.35" />
+                                                    </svg>
+                                                    Search
+                                                </button>
+
+                                            </div>
+                                        </div>
 
                                     </tr>
                                     <tr>
@@ -523,7 +523,7 @@
                                         <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
                                         <td>Jan 15, 2024</td>
                                         <td>John Smith</td>
-                                        
+
                                         <td><button class="btn btn-sm btn-primary"
                                                 style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
                                         </td>
@@ -534,18 +534,7 @@
                                         <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
                                         <td>Jan 15, 2024</td>
                                         <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
+
                                         <td><button class="btn btn-sm btn-primary"
                                                 style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
                                         </td>
@@ -556,7 +545,18 @@
                                         <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
                                         <td>Jan 15, 2024</td>
                                         <td>John Smith</td>
-                                        
+
+                                        <td><button class="btn btn-sm btn-primary"
+                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"><input type="checkbox" /></td>
+                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                        <td>Jan 15, 2024</td>
+                                        <td>John Smith</td>
+
                                         <td><button class="btn btn-sm btn-primary"
                                                 style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
                                         </td>
@@ -586,27 +586,25 @@
 
                 <!-- ══ REGISTRATION PANEL ══ -->
                 <div id="panel-assign" style="display:none;">
-                     <h1 style="font-size:20px; font-weight:700; color:#0f172a; margin:0 0 4px;">File Assignment</h1>
-                    
-
-                <!-- Tabs -->
-                <div style="display:flex; gap:8px; margin-bottom:24px;">
-                    <button class="tab-btn " id="tab-registration"
-                        onclick="showTab('intimation')">Received Files</button>
-                    <button class="tab-btn " id="tab-registration"
-                        onclick="showTab('registration')">Assign to me</button>
-                        <button class="tab-btn " id="tab-registration"
-                        onclick="showTab('intimation')">Task Handling </button>
-                        <button class="tab-btn " id="tab-registration"
-                        onclick="showTab('intimation')">Manual Task Accept </button>
-                        <button class="tab-btn " id="tab-registration"
-                        onclick="showTab('intimation')">Final Close </button>
-                        <button class="tab-btn" id="tab-registration"
-                        onclick="showTab('intimation')">File Reopening </button>
-                </div>
+                    <h1 style="font-size:20px; font-weight:700; color:#0f172a; margin:0 0 4px;">File Assignment</h1>
 
 
-                     <!-- Table card -->
+                    <!-- Tabs -->
+                    <div style="display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap;">
+                        <button class="tab-btn" id="tab-received-assign" onclick="showTab('received')">Received
+                            Files</button>
+                        <button class="tab-btn active" id="tab-assign-assign" onclick="showTab('assign')">Assigned to
+                            me</button>
+                        <button class="tab-btn" id="tab-task-assign" onclick="showTab('task')">Task Handling</button>
+                        <button class="tab-btn" id="tab-manual-assign" onclick="showTab('manual')">Manual Task
+                            Accept</button>
+                        <button class="tab-btn" id="tab-final-assign" onclick="showTab('final')">Final Close</button>
+                        <button class="tab-btn" id="tab-reopen-assign" onclick="showTab('reopen')">File
+                            Reopening</button>
+                    </div>
+
+                    <!-- Assigned to Me Section  -->
+
                     <div
                         style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
                         <div
@@ -639,235 +637,697 @@
                                 <tbody>
                                     <tr>
                                         <!-- Search bar -->
+                                        <div
+                                            style="background:white; padding:18px 20px; margin-bottom:20px; display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                                            <div style="flex:1; min-width:160px;">
+                                                <label
+                                                    style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Date
+                                                    Range</label>
+                                                <div style="display:flex; align-items:center; gap:6px;">
+                                                    <div class="date-input"
+                                                        style="flex:1; min-width:0; cursor:pointer;">
+                                                        <span style="flex:1; color:#94a3b8; font-size:12.5px;">From
+                                                            Date</span>
+                                                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                            stroke="#94a3b8" stroke-width="2">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                                        </svg>
+                                                    </div>
+                                                    <span style="color:#94a3b8; font-size:12px;">to</span>
+                                                    <div class="date-input"
+                                                        style="flex:1; min-width:0; cursor:pointer;">
+                                                        <span style="flex:1; color:#94a3b8; font-size:12.5px;">To
+                                                            Date</span>
+                                                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                            stroke="#94a3b8" stroke-width="2">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="flex:1; min-width:160px;">
+                                                <label
+                                                    style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Reference
+                                                    / Policy Number</label>
+                                                <input class="search-input"
+                                                    placeholder="Enter Reference / Policy Number" style="width:100%;" />
+                                            </div>
+                                            <div style="flex:1; min-width:160px;">
+                                                <label
+                                                    style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Contact
+                                                    Number (Claim-Intimated)</label>
+                                                <input class="search-input" placeholder="Enter Contact Number"
+                                                    style="width:100%;" />
+                                            </div>
+                                            <div style="display:flex; gap:8px; flex-shrink:0;">
+                                                <button class="btn-search">
+                                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="2.5">
+                                                        <circle cx="11" cy="11" r="8" />
+                                                        <path d="m21 21-4.35-4.35" />
+                                                    </svg>
+                                                    Search
+                                                </button>
+
+                                            </div>
+                                        </div>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"><input type="checkbox" /></td>
+                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                        <td>Jan 15, 2024</td>
+                                        <td>John Smith</td>
+
+                                        <td><button class="btn btn-sm btn-primary"
+                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"><input type="checkbox" /></td>
+                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                        <td>Jan 15, 2024</td>
+                                        <td>John Smith</td>
+
+                                        <td><button class="btn btn-sm btn-primary"
+                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"><input type="checkbox" /></td>
+                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                        <td>Jan 15, 2024</td>
+                                        <td>John Smith</td>
+
+                                        <td><button class="btn btn-sm btn-primary"
+                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"><input type="checkbox" /></td>
+                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                        <td>Jan 15, 2024</td>
+                                        <td>John Smith</td>
+
+                                        <td><button class="btn btn-sm btn-primary"
+                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div
+                            style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
+                            <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
+                            <div style="display:flex; gap:4px; align-items:center;">
+                                <button class="page-btn">&#8249;</button>
+                                <button class="page-btn active">1</button>
+                                <button class="page-btn">2</button>
+                                <button class="page-btn">3</button>
+                                <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
+                                <button class="page-btn">5</button>
+                                <button class="page-btn">&#8250;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assignment Actions Section -->
+                <div
+                    style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; padding:18px 20px; margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,0.04); margin-top:24px;">
+                    <h3 style="font-size:16px; font-weight:600; color:#0f172a; margin-top:0; margin-bottom:16px;">
+                        Assignment Actions</h3>
                     <div
-                        style="background:white; padding:18px 20px; margin-bottom:20px; display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
-                        <div style="flex:1; min-width:160px;">
+                        style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin-bottom: 20px;">
+                        <div>
+                            <label
+                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Insured
+                                Name</label>
+                            <input type="text" placeholder="Enter Task Name" style="width:100%;" />
+                        </div>
+                        <div>
                             <label
                                 style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Date
-                                Range</label>
-                            <div style="display:flex; align-items:center; gap:6px;">
-                                <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
-                                    <span style="flex:1; color:#94a3b8; font-size:12.5px;">From Date</span>
-                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
-                                        stroke-width="2">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                        <line x1="16" y1="2" x2="16" y2="6" />
-                                        <line x1="8" y1="2" x2="8" y2="6" />
-                                        <line x1="3" y1="10" x2="21" y2="10" />
-                                    </svg>
-                                </div>
-                                <span style="color:#94a3b8; font-size:12px;">to</span>
-                                <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
-                                    <span style="flex:1; color:#94a3b8; font-size:12.5px;">To Date</span>
-                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
-                                        stroke-width="2">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                        <line x1="16" y1="2" x2="16" y2="6" />
-                                        <line x1="8" y1="2" x2="8" y2="6" />
-                                        <line x1="3" y1="10" x2="21" y2="10" />
-                                    </svg>
-                                </div>
-                            </div>
+                                of Loss
+                            </label>
+                            <select class="search-input"
+                                style="width:100%; appearance:none; background-image:url('data:image/svg+xml;utf8,<svg width=\'12\' height=\'12\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2394a3b8\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 9l-7 7-7-7\'/></svg>'); background-repeat:no-repeat; background-position:right 12px center;">
+                                <option>Select Role</option>
+                            </select>
                         </div>
-                        <div style="flex:1; min-width:160px;">
+                        <div>
                             <label
-                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Reference
-                                / Policy Number</label>
-                            <input class="search-input" placeholder="Enter Reference / Policy Number"
-                                style="width:100%;" />
+                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Assign
+                                To (Officer Name)</label>
+                            <select class="search-input"
+                                style="width:100%; appearance:none; background-image:url('data:image/svg+xml;utf8,<svg width=\'12\' height=\'12\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2394a3b8\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 9l-7 7-7-7\'/></svg>'); background-repeat:no-repeat; background-position:right 12px center;">
+                                <option>Select Officer</option>
+                            </select>
                         </div>
-                        <div style="flex:1; min-width:160px;">
+                        <div>
                             <label
-                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Contact
-                                Number (Claim-Intimated)</label>
-                            <input class="search-input" placeholder="Enter Contact Number" style="width:100%;" />
+                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Priority</label>
+                            <select class="search-input"
+                                style="width:100%; appearance:none; background-image:url('data:image/svg+xml;utf8,<svg width=\'12\' height=\'12\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2394a3b8\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 9l-7 7-7-7\'/></svg>'); background-repeat:no-repeat; background-position:right 12px center;">
+                                <option>Normal</option>
+                            </select>
                         </div>
-                        <div style="display:flex; gap:8px; flex-shrink:0;">
-                            <button class="btn-search">
-                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <circle cx="11" cy="11" r="8" />
-                                    <path d="m21 21-4.35-4.35" />
+                        <div>
+                            <label
+                                style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Expected
+                                Completion</label>
+                            <div class="date-input" style="width:100%; cursor:pointer; justify-content:space-between;">
+                                <span style="color:#94a3b8; font-size:13px;">Date</span>
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
                                 </svg>
-                                Search
-                            </button>
-                            
-                        </div>
-                    </div>
-
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Pagination -->
-                        <div
-                            style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
-                            <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
-                            <div style="display:flex; gap:4px; align-items:center;">
-                                <button class="page-btn">&#8249;</button>
-                                <button class="page-btn active">1</button>
-                                <button class="page-btn">2</button>
-                                <button class="page-btn">3</button>
-                                <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
-                                <button class="page-btn">5</button>
-                                <button class="page-btn">&#8250;</button>
                             </div>
                         </div>
                     </div>
-                    
 
-                <!-- Tabs -->
-                
-
-
-                     <!-- Table card -->
+                    <!-- Upload area -->
                     <div
-                        style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04); margin-top: 24px;">
-                        <div
-                            style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1.5px solid #f1f5f9;">
-                            <span style="font-size:20px; font-weight:500; color:#0f172a;">Assigned Files</span>
-                            <div style="display:flex; align-items:center; gap:10px;">
-                               
-                                <span class="badge-records">14 records found</span>
-                            </div>
-                        </div>
-                        <div style="overflow-x:auto;">
-                            <table class="claims-table" style="width:100%; border-collapse:collapse; min-width:950px;">
-                                <thead>
-                                    <tr>
-                                        <th style="width:36px; text-align:center;"><input type="checkbox" /></th>
-                                        <th>Claim Number </th>
-                                        <th>Ref Number</th>
-                                        <th>Assigned Date</th>
-                                        <th>Assigned By</th>
-                                        <th>Accept File Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;"><input type="checkbox" /></td>
-                                        <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
-                                        <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
-                                        <td>Jan 15, 2024</td>
-                                        <td>John Smith</td>
-                                        
-                                        <td><button class="btn btn-sm btn-primary"
-                                                style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Pagination -->
-                        <div
-                            style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
-                            <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
-                            <div style="display:flex; gap:4px; align-items:center;">
-                                <button class="page-btn">&#8249;</button>
-                                <button class="page-btn active">1</button>
-                                <button class="page-btn">2</button>
-                                <button class="page-btn">3</button>
-                                <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
-                                <button class="page-btn">5</button>
-                                <button class="page-btn">&#8250;</button>
-                            </div>
-                        </div>
+                        style="border:1.5px dashed #cbd5e1; border-radius:12px; padding:24px; text-align:center; background:#f8fafc; margin-bottom:16px;">
+                        <svg style="margin:0 auto 8px;" width="32" height="32" viewBox="0 0 24 24" fill="#94a3b8">
+                            <path
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                        </svg>
+                        <div style="font-size:14px; color:#475569; font-weight:500; margin-bottom:4px;">
+                            Click to upload or drag and drop</div>
+                        <div style="font-size:12px; color:#94a3b8; margin-bottom:12px;">PDF, DOC, DOCX, JPG,
+                            PNG (Max 10MB)</div>
+                        <button class="btn-search" style="margin:0 auto; padding:6px 14px;">
+                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            Upload Screenshot
+                        </button>
                     </div>
 
-                    
+                    <div style="display:flex; justify-content:space-between;">
+                        <button class="btn-search" style="padding:8px 16px; align-items: end;">
+                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Assign File
+                        </button>
+                    </div>
                 </div>
+
+
+
+
+
+
+                <!-- Table card -->
+                <div
+                    style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04); margin-top: 24px;">
+                    <div
+                        style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1.5px solid #f1f5f9;">
+                        <span style="font-size:20px; font-weight:500; color:#0f172a;">Assigned Files</span>
+                        <div style="display:flex; align-items:center; gap:10px;">
+
+                            <span class="badge-records">14 records found</span>
+                        </div>
+                    </div>
+                    <div style="overflow-x:auto;">
+                        <table class="claims-table" style="width:100%; border-collapse:collapse; min-width:950px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:36px; text-align:center;"><input type="checkbox" />
+                                    </th>
+                                    <th>Claim Number </th>
+                                    <th>Ref Number</th>
+                                    <th>Assigned Date</th>
+                                    <th>Assigned By</th>
+                                    <th>Accept File Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                    <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>John Smith</td>
+
+                                    <td><button class="btn btn-sm btn-primary"
+                                            style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                    <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>John Smith</td>
+
+                                    <td><button class="btn btn-sm btn-primary"
+                                            style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                    <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>John Smith</td>
+
+                                    <td><button class="btn btn-sm btn-primary"
+                                            style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;"><input type="checkbox" /></td>
+                                    <td style="font-weight:600; color:#0f172a;">CLM-2024-001234</td>
+                                    <td style="font-weight:600; color:#0f172a;">REF-2024-001234</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td>John Smith</td>
+
+                                    <td><button class="btn btn-sm btn-primary"
+                                            style="font-size:12px; background-color:#00ADBB; border-color:#00ADBB; padding: 6px; border-radius: 5px; color: #fff;">Accept</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div
+                        style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
+                        <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
+                        <div style="display:flex; gap:4px; align-items:center;">
+                            <button class="page-btn">&#8249;</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
+                            <button class="page-btn">5</button>
+                            <button class="page-btn">&#8250;</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
         </div>
 
-        </main>
+        <!-- ══ TASK HANDLING PANEL ══ -->
+        <div id="panel-task" style="display:none;">
+            <h1 style="font-size:22px; font-weight:700; color:#0f172a; margin:0 0 4px;">File Assignment
+            </h1>
+
+            <!-- Tabs -->
+            <div style="display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap;">
+                <button class="tab-btn" onclick="showTab('received')">Received Files</button>
+                <button class="tab-btn" onclick="showTab('assign')">Assigned to me</button>
+                <button class="tab-btn active" onclick="showTab('task')">Task Handling</button>
+                <button class="tab-btn" onclick="showTab('manual')">Manual Task Accept</button>
+                <button class="tab-btn" onclick="showTab('final')">Final Close</button>
+                <button class="tab-btn" onclick="showTab('reopen')">File Reopening</button>
+            </div>
+
+            <!-- Filters Section -->
+            <div
+                style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; padding:18px 20px; margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                <h3 style="font-size:16px; font-weight:600; color:#0f172a; margin-top:0; margin-bottom:16px;">
+                    Filters</h3>
+                <div style="display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap;">
+                    <div style="flex:1; min-width:160px;">
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Claim/Reference/Policy
+                            Number</label>
+                        <div style="position:relative;">
+                            <svg style="position:absolute; left:12px; top:8px;" width="14" height="14" fill="none"
+                                viewBox="0 0 24 24" stroke="#94a3b8" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input class="search-input" placeholder="Enter Number..."
+                                style="width:100%; padding-left:32px;" />
+                        </div>
+                    </div>
+                    <div style="flex:1; min-width:160px;">
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Contact
+                            Number (Claim-Intimated)</label>
+                        <input class="search-input" placeholder="Enter Contact Number" style="width:100%;" />
+                    </div>
+                    <div style="flex:1; min-width:240px;">
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Date
+                            Range</label>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
+                                <span style="flex:1; color:#94a3b8; font-size:12.5px;">From Date</span>
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <span style="color:#94a3b8; font-size:12px;">to</span>
+                            <div class="date-input" style="flex:1; min-width:0; cursor:pointer;">
+                                <span style="flex:1; color:#94a3b8; font-size:12.5px;">To Date</span>
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:8px; flex-shrink:0;">
+                        <button class="btn-search" style="padding: 8px 16px;">
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assigned to Member Section -->
+            <div
+                style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04); margin-bottom:20px;">
+                <div
+                    style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1.5px solid #f1f5f9;">
+                    <span style="font-size:18px; font-weight:600; color:#0f172a;">Assigned to
+                        Member</span>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <span class="badge-records"
+                            style="background: #fef2f2; color: #ef4444; border: 1px solid #fca5a5;">14
+                            records found</span>
+                    </div>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="claims-table" style="width:100%; border-collapse:collapse; min-width:800px;">
+                        <thead>
+                            <tr>
+                                <th style="width:36px; text-align:center;"><input type="checkbox" />
+                                </th>
+                                <th>Claim Number</th>
+                                <th>Ref Number</th>
+                                <th>Assigned Date</th>
+                                <th>Assigned by</th>
+                                <th>Assigned by</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center;"><input type="checkbox" /></td>
+                                <td style="color:#0f172a;">CLM-2024-05238</td>
+                                <td style="color:#0f172a;">REF-2024-05238</td>
+                                <td>Jan 15, 2024</td>
+                                <td>Chamal Achintha</td>
+                                <td>G60582</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;"><input type="checkbox" /></td>
+                                <td style="color:#0f172a;">CLM-2024-05238</td>
+                                <td style="color:#0f172a;">REF-2024-05238</td>
+                                <td>Jan 15, 2024</td>
+                                <td>Chamal Achintha</td>
+                                <td>G60582</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;"><input type="checkbox" /></td>
+                                <td style="color:#0f172a;">CLM-2024-05238</td>
+                                <td style="color:#0f172a;">REF-2024-05238</td>
+                                <td>Jan 15, 2024</td>
+                                <td>Chamal Achintha</td>
+                                <td>G60582</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Pagination -->
+                <div
+                    style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
+                    <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
+                    <div style="display:flex; gap:4px; align-items:center;">
+                        <button class="page-btn">&#8249;</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
+                        <button class="page-btn">5</button>
+                        <button class="page-btn">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assignment Actions Section -->
+            <div
+                style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; padding:18px 20px; margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                <h3 style="font-size:16px; font-weight:600; color:#0f172a; margin-top:0; margin-bottom:16px;">
+                    Assignment Actions</h3>
+                <div
+                    style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin-bottom: 20px;">
+                    <div>
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Task
+                            Name</label>
+                        <input class="search-input" placeholder="Enter Task Name" style="width:100%;" />
+                    </div>
+                    <div>
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Assignee
+                            Role</label>
+                        <select class="search-input"
+                            style="width:100%; appearance:none; background-image:url('data:image/svg+xml;utf8,<svg width=\'12\' height=\'12\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2394a3b8\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 9l-7 7-7-7\'/></svg>'); background-repeat:no-repeat; background-position:right 12px center;">
+                            <option>Select Role</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Assign
+                            To (Officer Name)</label>
+                        <select class="search-input"
+                            style="width:100%; appearance:none; background-image:url('data:image/svg+xml;utf8,<svg width=\'12\' height=\'12\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2394a3b8\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 9l-7 7-7-7\'/></svg>'); background-repeat:no-repeat; background-position:right 12px center;">
+                            <option>Select Officer</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Priority</label>
+                        <select class="search-input"
+                            style="width:100%; appearance:none; background-image:url('data:image/svg+xml;utf8,<svg width=\'12\' height=\'12\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2394a3b8\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 9l-7 7-7-7\'/></svg>'); background-repeat:no-repeat; background-position:right 12px center;">
+                            <option>Normal</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label
+                            style="font-size:11.5px; font-weight:600; color:#475569; display:block; margin-bottom:6px;">Expected
+                            Completion</label>
+                        <div class="date-input" style="width:100%; cursor:pointer; justify-content:space-between;">
+                            <span style="color:#94a3b8; font-size:13px;">Date</span>
+                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload area -->
+                <div
+                    style="border:1.5px dashed #cbd5e1; border-radius:12px; padding:24px; text-align:center; background:#f8fafc; margin-bottom:16px;">
+                    <svg style="margin:0 auto 8px;" width="32" height="32" viewBox="0 0 24 24" fill="#94a3b8">
+                        <path
+                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                    </svg>
+                    <div style="font-size:14px; color:#475569; font-weight:500; margin-bottom:4px;">
+                        Click to upload or drag and drop</div>
+                    <div style="font-size:12px; color:#94a3b8; margin-bottom:12px;">PDF, DOC, DOCX, JPG,
+                        PNG (Max 10MB)</div>
+                    <button class="btn-search" style="margin:0 auto; padding:6px 14px;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                        Upload Screenshot
+                    </button>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label
+                        style="display:flex; align-items:center; gap:8px; font-size:13px; color:#475569; cursor:pointer;">
+                        <input type="checkbox" />
+                        Attach <span style="font-weight:600;">claim</span> documents to email <span
+                            style="font-weight:600;">notification</span>
+                    </label>
+                    <button class="btn-search" style="padding:8px 16px;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Assign File
+                    </button>
+                </div>
+            </div>
+
+            <!-- Assigned to Me Section -->
+            <div
+                style="background:white; border:1.5px solid #e2e8f0; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                <div
+                    style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1.5px solid #f1f5f9;">
+                    <span style="font-size:18px; font-weight:600; color:#0f172a;">Assigned to Me</span>
+                    <div style="display:flex; gap:10px;">
+                        <div style="position:relative;">
+                            <svg style="position:absolute; left:10px; top:8px;" width="14" height="14" fill="none"
+                                viewBox="0 0 24 24" stroke="#94a3b8" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input class="search-input" placeholder="Search Category..."
+                                style="width:200px; padding-left:30px; padding-top:6px; padding-bottom:6px;" />
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <div class="date-input" style="width:120px; cursor:pointer; padding:6px 10px;">
+                                <span style="flex:1; color:#94a3b8; font-size:12.5px;">From Date</span>
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <span style="color:#94a3b8; font-size:12px;">to</span>
+                            <div class="date-input" style="width:120px; cursor:pointer; padding:6px 10px;">
+                                <span style="flex:1; color:#94a3b8; font-size:12.5px;">To Date</span>
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#94a3b8"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="btn-search" style="padding: 6px 14px;">Filters</button>
+                    </div>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="claims-table" style="width:100%; border-collapse:collapse; min-width:1000px;">
+                        <thead>
+                            <tr>
+                                <th style="width:36px; text-align:center;"><input type="checkbox" />
+                                </th>
+                                <th>Claim Number</th>
+                                <th>Ref Number</th>
+                                <th>Date Received</th>
+                                <th>Insured Name</th>
+                                <th>Assignee</th>
+                                <th>Provider Category</th>
+                                <th>Assigned Date (Provider)</th>
+                                <th>Aging (Days)</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center;"><input type="checkbox" /></td>
+                                <td style="color:#0f172a;">CLM-2024-05238</td>
+                                <td style="color:#0f172a;">REF-2024-05238</td>
+                                <td>Jan 15,<br>2024</td>
+                                <td>Acme Manufacturing Ltd.</td>
+                                <td>Udantha Sandaru</td>
+                                <td>Loss Adjusters</td>
+                                <td>Jan 15, 2024</td>
+                                <td><span
+                                        style="background:#fef3c7; color:#d97706; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:600;">3
+                                        days</span></td>
+                                <td>Comment 1</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;"><input type="checkbox" /></td>
+                                <td style="color:#0f172a;">CLM-2024-05238</td>
+                                <td style="color:#0f172a;">REF-2024-05238</td>
+                                <td>Jan 15,<br>2024</td>
+                                <td>Global Shipping Corp.</td>
+                                <td>Chamodi Rathnayeka</td>
+                                <td>Risk Engineering</td>
+                                <td>Jan 15, 2024</td>
+                                <td><span
+                                        style="background:#fee2e2; color:#dc2626; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:600;">7
+                                        days</span></td>
+                                <td>Comment 2</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;"><input type="checkbox" /></td>
+                                <td style="color:#0f172a;">CLM-2024-05238</td>
+                                <td style="color:#0f172a;">REF-2024-05238</td>
+                                <td>Jan 15,<br>2024</td>
+                                <td>Metro Transport Inc.</td>
+                                <td>Ashani Kalansooriya</td>
+                                <td>Reinsurance Department</td>
+                                <td>Jan 15, 2024</td>
+                                <td><span
+                                        style="background:#fee2e2; color:#dc2626; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:600;">7
+                                        days</span></td>
+                                <td>Comment 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Pagination -->
+                <div
+                    style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid #f1f5f9;">
+                    <span style="font-size:12.5px; color:#64748b;">Showing 1 to 5 of 24 results</span>
+                    <div style="display:flex; gap:4px; align-items:center;">
+                        <button class="page-btn">&#8249;</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span style="font-size:12px; color:#94a3b8; padding:0 2px;">…</span>
+                        <button class="page-btn">5</button>
+                        <button class="page-btn">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
     </div>
     </div>
 
     <script>
         function showTab(tab) {
-            document.getElementById('panel-received').style.display = tab === 'recieved' ? '' : 'none';
+            document.getElementById('panel-received').style.display = tab === 'received' ? '' : 'none';
             document.getElementById('panel-assign').style.display = tab === 'assign' ? '' : 'none';
+            document.getElementById('panel-task').style.display = tab === 'task' ? '' : 'none';
 
-            document.getElementById('tab-received').className = 'tab-btn' + (tab === 'received' ? ' active' : '');
-            document.getElementById('tab-assign').className = 'tab-btn' + (tab === 'assign' ? ' active' : '');
+            // Optional: You can add logic to update tab active classes across all panels here if you use common class names, 
+            // but clicking a tab will show the panel with its own set of tabs which are already marked active.
         }
     </script>
 </body>
